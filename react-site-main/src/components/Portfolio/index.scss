@@ -1,0 +1,163 @@
+.portfolio-page {
+  padding-left: 100px;
+  padding-right: 50px;
+  width: calc(100% - 150px);
+  position: initial;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url('../../assets/images/portfoliobg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .page-title {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 52px;
+    font-family: 'Coolvetica';
+    color: #ffd300;
+    font-weight: 400;
+    left: -10px;
+  }
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1000px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .project-container {
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: #efefea;
+    position: relative;
+    flex: 0 0 calc(25% - 20px);
+    margin: 10px;
+    width: calc(25% - 20px);
+    height: 380px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #fff;
+    opacity: 0.9;
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgb(255, 255, 255);
+        object-fit: cover; /* Added object-fit property */
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #00000077;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        h2 {
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+          margin-bottom: 10px;
+          color: #ffd300;
+        }
+
+        button {
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+          font-style: bold;
+          margin-bottom: 10px;
+          border: 2px solid #ffffff;
+          background-color: #ffd500;
+          font-size: 16px;
+          padding: 10px 20px;
+          cursor: pointer;
+          //box-shadow: 0 2px 8px #fff;
+        }
+      }
+
+      &:hover .overlay {
+        opacity: 1;
+      }
+    }
+
+    .project-description {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .portfolio-page {
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    background: none;
+
+    .page-title {
+      font-size: 42px;
+    }
+
+    .project-container {
+      flex-direction: column;
+      width: 100%;
+      margin: 10px;
+      opacity: 1;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #00000099;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+
+        h2 {
+          display: none; /* This will hide the h2 */
+        }
+
+        button {
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+          margin-bottom: 10px;
+          border: solid #ffffff;
+          background-color: #ffd300;
+          font-size: 16px;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .projects-grid .project-container .project-image:hover .overlay {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

@@ -1,0 +1,122 @@
+.certificate-page {
+  padding-left: 100px;
+  padding-right: 50px;
+  width: calc(100% - 150px);
+  position: initial;
+  height: 100%;
+  overflow: auto;
+  background-image: url('../../assets/images/certificatebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .page-title {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 52px;
+    font-family: 'Coolvetica';
+    color: #ffff;
+    font-weight: 400;
+    position: relative;
+    left: -10px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    text-align: center;
+    opacity: 1;
+  }
+
+  .details-container li {
+    flex: 1 0 calc(25% - 20px);
+    display: flex; /* Make the li a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Space between items, pushing the footer to the bottom */
+    border-style: solid;
+    border-color: #ffd300;
+    background-color: #091e39bf;
+    border-width: 2px;
+    position: relative; /* For absolute positioning of children if needed */
+    padding: 20px; /* Add padding as needed */
+  }
+
+  .details-container li h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+    font-size: 28px;
+    color: #ffd300;
+    margin: 0 0 auto; /* Pushes everything else down */
+  }
+
+  .details-container li h3 a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .details-container li h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .details-container li p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    color: #fffdfd;
+    font-size: 22px;
+    margin: 0; /* Reset margin for p if necessary */
+  }
+
+  .details-container li p a {
+    color: #ffffff;
+    text-decoration: underline;
+    align-self: center; /* Center the link within the flex item */
+    margin-top: auto; /* Push the link to the bottom */
+  }
+
+  .details-container li p a:hover {
+    text-decoration: overline;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .certificate-page {
+    padding-left: 50px; /* Reduced padding for smaller screens */
+    padding-right: 50px;
+    width: calc(100% - 100px);
+    background: none;
+
+    .page-title {
+      color: #ffd300;
+    }
+
+    .details-container li {
+      background-color: #091e39; /* Replace #newColor with the color you want */
+    }
+
+    .container {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      .page-title p {
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+      .image-box {
+        height: 200px;
+        max-width: calc(50% - 10px);
+      }
+    }
+  }
+}
